@@ -1,0 +1,38 @@
+<%- include('../partials/header')%>
+  <%- include('../partials/navbar') %>
+
+    <div class="container">
+      <div class="header">
+        <h4 class="tasks">Tasks</h4>
+        <a href="/tasks/new"><i class="fa-solid fa-plus"></i></a>
+      </div>
+      <hr>
+      <ul>
+        <% tasks.forEach(function(task) { %>
+          <li>
+            <!-- <input type="checkbox" name="" id="myCheckbox"> -->
+
+            <a href="/tasks/<%= task.id %>/details">
+              <span>
+                <%= task.title %>
+              </span>
+            </a>
+            <div class="box">
+              Created on: <%=task.createdAt %>
+                <div class="innerbox">
+                  <button><a href="/tasks/<%= task.id %>/edit"><i class="fa-solid fa-pen-to-square"></i></a></button>
+                  <form action="/tasks/<%= task.id %>?_method=DELETE" method="post">
+                    <button type="submit" class="xmark"><i class="fa-solid fa-xmark"></i> </button>
+                  </form>
+                </div>
+            </div>
+          </li>
+          <% }); %>
+
+      </ul>
+    </div>
+
+
+
+
+    <%- include('../partials/footer') %>

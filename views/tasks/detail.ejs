@@ -1,0 +1,27 @@
+<%- include('../partials/header')%>
+
+  <div class="new-container">
+    <div class="detail-container">
+      <a href="/tasks" class="left-arrow"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+      <h1>Details</h1>
+
+      <ul>
+        <li>
+          <h3>Title: </h3>
+          <%= foundTask.title %>
+            <h3>Description: </h3>
+            <%= foundTask.description %>
+
+              <h3>Status: </h3>
+              <%= foundTask.status %>
+
+                <h3>Due-Date: </h3>
+                <%= foundTask.duedate %>
+
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <%- include('../partials/footer') %>

@@ -1,0 +1,295 @@
+<%- include('partials/header')%>
+
+
+  <div class="main-wrapper">
+    <%- include('partials/navbar') %>
+      <div class="container">
+        <div class="content-head">
+          <h3 class="content-head-title">Tasks Board</h3>
+          <button class="content-head-btn">Show Backlog</button>
+        </div>
+
+        <div class="content-tab">
+          <div class="content-tab-head">
+            <div class="tab-l">
+              <ul class="tab-btns">
+                <li class="tab-btn-item">
+                  <button class="tab-btn-link" type="button">Overview</button>
+                </li>
+                <li class="tab-btn-item active">
+                  <button class="tab-btn-link" type="button">Tasks</button>
+                </li>
+                <li class="tab-btn-item">
+                  <button class="tab-btn-link" type="button">Milestones</button>
+                </li>
+                <li class="tab-btn-item">
+                  <button class="tab-btn-link" type="button">Messages</button>
+                </li>
+                <li class="tab-btn-item">
+                  <button class="tab-btn-link" type="button">Files</button>
+                </li>
+                <li class="tab-btn-item">
+                  <button class="tab-btn-link" type="button">Time</button>
+                </li>
+                <li class="tab-btn-item">
+                  <button class="tab-btn-link" type="button">Comments</button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-r">
+              <button class="tab-r-btn">
+                <img src="../assets/icons/maximize-icon.svg" class="tab-r-btn-icon" alt="">
+                <span class="tab-r-btn-text">Full screens</span>
+              </button>
+              <button class="tab-r-btn ms-3">
+                <img src="../assets/icons/funnel-icon.svg" class="tab-r-btn-icon" alt="">
+                <span class="tab-r-btn-text">Filters</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="content-tab-body">
+            <% for (var i=0; i < tasks.length;) { %>
+
+              <!-- ### tab block 1 ### -->
+              <div class="tab-body-block">
+                <div class="body-item-head">
+                  <h4 class="body-item-head-title">
+                    <%= tasks[i].title%>
+                  </h4>
+                  <button class="body-item-head-btn group">
+                    <img src="../assets/icons/plus-icon-alt.svg" alt="" class="group-hover:invert">
+                  </button>
+                </div>
+                <!-- tab body list -->
+                <div id="tab-body-container">
+                  <div class="tab-body-list">
+                    <!-- tab item -->
+                    <div class="tab-body-item">
+                      <div class="item-top">
+                        <div class="item-top-title">
+                          <div class="checkbox-wrapper">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="item-body">
+                        <p class="item-body-text">
+                          <%= tasks[i].description%>
+                        </p>
+                        <div class="badge-group">
+                          <span class="badge-brown">Optimalization</span>
+                          <span class="badge-blue">New Project</span>
+                          <span class="badge-green">Design</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end of tab item -->
+                  </div>
+                </div>
+                <!-- end of tab body list -->
+                <div class="addcard rounded-lg ml-1">
+                  <button
+                    class="addcardbtn rounded-lg hover:bg-gray-200 transition-all duration-300 ease-in-out w-full text-left pl-2 py-1 ">
+                    <i class="fa-solid fa-plus mr-2"></i>
+                    Add a card
+                  </button>
+                  <div class="additions proactive">
+                    <textarea name="card-details" class="card-details"></textarea>
+                    <button class="add px-4 bg-light-blue">Add</button>
+                    <i class="cancel fa-solid fa-xmark fa-lg cursor-pointer"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ### end of tab block 1 ### -->
+              <% i++;%>
+                <!-- ### tab block 2 ### -->
+                <div class="tab-body-block">
+                  <div class="body-item-head">
+                    <h4 class="body-item-head-title">
+                      <%= tasks[i].title%>
+                    </h4>
+                    <button class="body-item-head-btn group">
+                      <img src="../assets/icons/plus-icon-alt.svg" alt="" class="group-hover:invert">
+                    </button>
+                  </div>
+                  <!-- tab body list -->
+                  <div id="tab-body-container">
+                    <div class="tab-body-list">
+                      <!-- tab item -->
+                      <div class="tab-body-item">
+                        <div class="item-top">
+                          <div class="item-top-title">
+                            <div class="checkbox-wrapper">
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="item-body">
+                          <p class="item-body-text">
+                            <%= tasks[i].description%>
+                          </p>
+                          <div class="badge-group">
+                            <span class="badge-brown">Optimalization</span>
+                            <span class="badge-blue">New Project</span>
+                            <span class="badge-green">Design</span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end of tab item -->
+                    </div>
+                  </div>
+                  <!-- end of tab body list -->
+                  <div class="addcard rounded-lg ml-1">
+                    <button
+                      class="addcardbtn rounded-lg hover:bg-gray-200 transition-all duration-300 ease-in-out w-full text-left pl-2 py-1 ">
+                      <i class="fa-solid fa-plus mr-2"></i>
+                      Add a card
+                    </button>
+                    <div class="additions proactive">
+                      <textarea name="card-details" class="card-details"></textarea>
+                      <button class="add px-4 bg-light-blue">Add</button>
+                      <i class="cancel fa-solid fa-xmark fa-lg cursor-pointer"></i>
+                    </div>
+                  </div>
+                </div>
+                <!-- ### end of tab block 2 ### -->
+                <% i++;%>
+
+                  <!-- ### tab block 3 ### -->
+                  <div class="tab-body-block">
+                    <div class="body-item-head">
+                      <h4 class="body-item-head-title">
+                        <%= tasks[i].title%>
+                      </h4>
+                      <button class="body-item-head-btn group">
+                        <img src="../assets/icons/plus-icon-alt.svg" alt="" class="group-hover:invert">
+                      </button>
+                    </div>
+                    <!-- tab body list -->
+                    <div id="tab-body-container">
+                      <div class="tab-body-list">
+                        <!-- tab item -->
+                        <div class="tab-body-item">
+                          <div class="item-top">
+                            <div class="item-top-title">
+                              <div class="checkbox-wrapper">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="item-body">
+                            <p class="item-body-text">
+                              <%= tasks[i].description%>
+                            </p>
+                            <div class="badge-group">
+                              <span class="badge-brown">Optimalization</span>
+                              <span class="badge-blue">New Project</span>
+                              <span class="badge-green">Design</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end of tab item -->
+                      </div>
+                    </div>
+                    <!-- end of tab body list -->
+                    <div class="addcard rounded-lg ml-1">
+                      <button
+                        class="addcardbtn rounded-lg hover:bg-gray-200 transition-all duration-300 ease-in-out w-full text-left pl-2 py-1 ">
+                        <i class="fa-solid fa-plus mr-2"></i>
+                        Add a card
+                      </button>
+                      <div class="additions proactive">
+                        <textarea name="card-details" class="card-details"></textarea>
+                        <button class="add px-4 bg-light-blue">Add</button>
+                        <i class="cancel fa-solid fa-xmark fa-lg cursor-pointer"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ### end of tab block 3 ### -->
+                  <% i++;%>
+
+                    <% }; %>
+
+
+
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+
+  <script>
+
+    const containers = document.querySelectorAll('.addcard');
+    const buttons = document.querySelectorAll('.addcardbtn');
+    const cancels = document.querySelectorAll('.cancel');
+    const additions = document.querySelectorAll('.additions');
+    const adds = document.querySelectorAll('.add');
+    const tabcontainers = document.querySelectorAll('.tab-body-container');
+    const carddetails = document.querySelectorAll('.card-details');
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', function () {
+        button.classList.toggle('proactive');
+        // console.log(index);
+        // console.log(additions[index]);
+        additions[index].classList.toggle('proactive');
+      });
+
+      // Use cancels[index] to target the specific cancel button for this block
+      cancels[index].addEventListener('click', function () {
+        button.classList.toggle('proactive');
+        additions[index].classList.toggle('proactive');
+      });
+
+      // Similarly, use tabcontainers[index] to access the specific container for this block
+      adds[index].addEventListener('click', function () {
+        const existinghtml = tabcontainers[index].innerHTML;
+        const text = carddetails[index].value; // Use carddetails[index] to get the value of this specific textarea
+        const html = `
+      <div class="tab-body-container">
+        <!-- tab body list -->
+        <div class="tab-body-list">
+          <!-- tab item -->
+          <div class="tab-body-item">
+            <div class="item-top">
+              <div class="item-top-title">
+                <div class="checkbox-wrapper">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </div>
+              </div>
+            </div>
+            <div class="item-body">
+              <p class="item-body-text">
+                ${text}
+              </p>
+              <div class="badge-group">
+                <span class="badge-brown">Optimization</span>
+                <span class="badge-blue">New Project</span>
+                <span class="badge-green">Design</span>
+              </div>
+            </div>
+          </div>
+          <!-- end of tab item -->
+        </div>
+      </div>`;
+
+        tabcontainers[index].innerHTML = existinghtml + html;
+        button.classList.toggle('proactive');
+        additions[index].classList.toggle('proactive');
+      });
+    });
+
+  </script>
+
+  <%- include('partials/footer') %>

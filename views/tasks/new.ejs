@@ -1,0 +1,64 @@
+<%- include('../partials/header')%>
+
+
+  <div class="new-container">
+    <a href="/tasks"><i class="edit-cross fa-solid fa-xmark fa-lg"></i></a>
+    <div class="inner-create-container">
+      <h3 class="createtask">Create a Task</h3>
+      <form class="formclass" action="/tasks" method="POST">
+        <div class="create-task">
+          <div class="create-container">
+            <div class="input">
+              <label for="first-name">Title</label>
+              <input type="text" name="title" id="" required>
+            </div>
+
+            <div class="input">
+              <label class="desc" for="description">Description</label>
+              <textarea name="description" id="description" required></textarea>
+            </div>
+
+            <br>
+
+
+            <div class="input">
+              <label class="stat" for="Status">Status</label>
+              <select name="status" id="" required>
+                <option value="To do">To do</option>
+                <option value="In progress">In progress</option>
+                <option value="On Hold">On Hold</option>
+                <option value="Done">Done</option>
+              </select>
+            </div>
+
+            <br>
+
+            <div class="date">
+              <label class="due" for="due-date">Due date</label>
+              <input type="date" name="duedate" id="" required>
+              <div class="line"></div>
+            </div>
+            <br>
+
+            <div class="create-btn">
+              <button class="submit" type="submit">Create</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <script>
+    function submitForm() {
+      const description = document.getElementById('description').value;
+      if (!description) {
+        alert("Please enter a description");
+        return false;
+      }
+      return true;
+    }
+  </script> -->
+
+
+  <%- include('../partials/footer') %>

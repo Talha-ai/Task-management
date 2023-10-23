@@ -1,0 +1,48 @@
+<%- include('../partials/header')%>
+
+  <div class="new-container">
+    <div class="edit-container">
+      <a href="/tasks"><i class="edit-cross fa-solid fa-xmark fa-lg"></i></a>
+      <h1 class="edit">Edit</h1>
+      <div class="edit-form">
+        <form class="formclass" method="post" action="/tasks/<%= foundTask.id %>?_method=PATCH">
+          <div class="create-task">
+            <div class="create-container">
+
+              <div class="input">
+                <label for="first-name">Title</label>
+                <input type="text" name="title" id="" value="<%=foundTask.title%>">
+              </div>
+
+              <div class="input">
+                <label class="desc" for="description">Description</label>
+                <textarea name="newDesp" id=""><%=foundTask.description%></textarea>
+              </div>
+
+              <br>
+
+              <div class="input">
+                <label class="stat" for="Status">Status</label>
+                <select name="status" id="">
+                  <option value="To do" <%=foundTask.status==="To do" ? 'selected' : '' %>>To do</option>
+                  <option value="In progress" <%=foundTask.status==="In progress" ? 'selected' : '' %>>In progress
+                  </option>
+                  <option value="On Hold" <%=foundTask.status==="On Hold" ? 'selected' : '' %>>On Hold</option>
+                  <option value="Done" <%=foundTask.status==="Done" ? 'selected' : '' %>>Done</option>
+                </select>
+              </div>
+
+              <br>
+              <div class="date">
+                <label class="due" for="due-date">Due date</label>
+                <input type="date" name="duedate" id="" value="<%=foundTask.duedate%>">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="save-btn"><button class="save">Save</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include('../partials/footer') %>
